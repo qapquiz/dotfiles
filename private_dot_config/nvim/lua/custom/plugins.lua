@@ -46,6 +46,13 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup()
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
