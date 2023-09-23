@@ -9,9 +9,9 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-    "c",
     "markdown",
     "markdown_inline",
+    "svelte",
   },
   indent = {
     enable = true,
@@ -31,6 +31,7 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "svelte-language-server",
     "deno",
     "prettier",
   },
