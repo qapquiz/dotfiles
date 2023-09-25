@@ -12,6 +12,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "svelte",
+    "kotlin",
   },
   indent = {
     enable = true,
@@ -23,6 +24,9 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
+    -- kotlin
+    "kotlin-language-server",
+
     -- lua stuff
     "lua-language-server",
     "stylua",
