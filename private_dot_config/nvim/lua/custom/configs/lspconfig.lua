@@ -3,10 +3,16 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
-local home_path = os.getenv("HOME")
-
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "svelte" }
+local servers = { "html", "cssls", "rust_analyzer" }
+
+local custom_on_attach = function(client, bufnr)
+  on_attach(client, bufnr)
+
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint(bufnr, true)
+  end
+end
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -15,13 +21,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.kotlin_language_server.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_options = {
-    storagePath = home_path .. "/.cache/kotlin_language_server"
-  }
+require("typescript-tools").setup {
+  on_attach = custom_on_attach,
 }
-
--- 
--- lspconfig.pyright.setup { blabla}

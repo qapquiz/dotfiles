@@ -10,6 +10,17 @@ M.general = {
   },
 }
 
+M.lsp = {
+  n = {
+    ["<leader>fm"] = {
+      function()
+        require("conform").format()
+      end,
+      "format with conform",
+    }
+  }
+}
+
 -- more keybinds!
 
 return M

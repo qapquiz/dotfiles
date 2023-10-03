@@ -8,13 +8,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
+      "pmizio/typescript-tools.nvim",
     },
     config = function()
       require "plugins.configs.lspconfig"
@@ -46,11 +40,11 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+
   {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    "stevearc/conform.nvim",
     config = function()
-      require("copilot").setup()
+      require "custom.configs.conform"
     end,
   },
 
