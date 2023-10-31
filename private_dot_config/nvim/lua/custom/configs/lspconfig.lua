@@ -23,4 +23,8 @@ end
 
 require("typescript-tools").setup {
   on_attach = custom_on_attach,
+
+  settings = {
+    tsserver_path = "/Users/armariya/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/tsserver.js"
+  }
 }
